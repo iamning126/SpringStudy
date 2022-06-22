@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.iamning.pojo.Address">
+        <property name="address" value="兰州"/>
+    </bean>
+    <bean id="student" class="com.iamning.pojo.Student">
+        <!--第一种，普通值注入，value-->
+        <property name="name" value="张三"/>
+        <!--第二种，Bean注入，ref-->
+        <property name="address" ref="address"/>
+        <!--数组注入，-->
+        <property name="books">
+            <array>
+                <value>本手</value>
+                <value>妙手</value>
+                <value>俗手</value>
+            </array>
+        </property>
+        <!--List-->
+        <property name="hobbys">
+            <list>
+                <value>唱歌</value>
+                <value>跳舞</value>
+                <value>篮球</value>
+                <value>rap</value>
+                <value>你干嘛~~~</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1562245488798989"></entry>
+                <entry key="银行卡号" value="566591568595656"></entry>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>DOTA2</value>
+                <value>COD</value>
+            </set>
+        </property>
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--Properties-->
+        <property name="info">
+            <props>
+                <prop key="学号">17488155</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">张三疯</prop>
+            </props>
+        </property>
+     </bean>
+</beans>
